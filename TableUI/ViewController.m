@@ -57,10 +57,17 @@
     //cell.name.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"Name"];
     //cell.subName.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"SubName"];
     
+    
     cell.name.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"Name"];
     cell.subName.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"SubName"];
+    cell.image.image = [UIImage imageNamed:@"1.png"];
     
     return cell;
+}
+
+-(void) dealloc{
+    [super dealloc];
+    [_people release];
 }
 
 @end

@@ -12,5 +12,6 @@
 
 @property (nonatomic,strong)UILabel *name;
 @property (nonatomic,strong)UILabel *subName;
+@property (nonatomic,strong)UIImageView *image;
 
 @end

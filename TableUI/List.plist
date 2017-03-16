@@ -4,6 +4,12 @@
 <array>
 	<dict>
 		<key>Name</key>
+		<string>Dmitrij</string>
+		<key>SubName</key>
+		<string>Potaov</string>
+	</dict>
+	<dict>
+		<key>Name</key>
 		<string>Artem</string>
 		<key>SubName</key>
 		<string>Cherneckij</string>

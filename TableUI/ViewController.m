@@ -23,7 +23,14 @@
     tableView.frame = self.view.bounds;
     tableView.delegate = self;
     tableView.dataSource = self;
-    self.people =[[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"List" ofType:@"plist"]];
+}
+
+-(NSArray *)people
+{
+    if (!_people) {
+        _people = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"List" ofType:@"plist"]];
+    }
+    return _people;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +43,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [self.people count];
 }
 
 
@@ -47,34 +54,11 @@
         cell = [[[TableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSDictionary *dictionary=(NSDictionary *)[self.people objectAtIndex:indexPath.row];
-    NSString *Name = [dictionary objectForKey:@"Name"];
+    //cell.name.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"Name"];
+    //cell.subName.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"SubName"];
     
-    switch (indexPath.row) {
-        case 0:
-            cell.name.text = Name;
-            cell.subName.text = @"Sat 10:30";
-            break;
-        case 1:
-            cell.name.text = @"Call With Client";
-            cell.subName.text = @"Planned";
-            break;
-        case 2:
-            cell.name.text = @"Appointment with Joey";
-            cell.subName.text = @"2 Hours";
-            break;
-        case 3:
-            cell.name.text = @"Call With Client";
-            cell.subName.text = @"Planned";
-            break;
-        case 4:
-            cell.name.text = @"Appointment with Joey";
-            cell.subName.text = @"2 Hours";
-            break;
-        default:
-            break;
-    }
-    
+    cell.name.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"Name"];
+    cell.subName.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"SubName"];
     
     return cell;
 }

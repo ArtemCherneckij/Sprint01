@@ -88,7 +88,6 @@
 				840A69521E7B0C8300D89176 /* ViewController.m */,
 				84F66CD01E792C2B00FB2FAC /* TableViewCell.h */,
 				84F66CD11E792C2B00FB2FAC /* TableViewCell.m */,
-				8443C60A1E771B2E0093B0AF /* List.plist */,
 				841EEF781E77015600DBF840 /* Images.xcassets */,
 				841EEF6B1E77015600DBF840 /* Supporting Files */,
 			);
@@ -98,6 +97,7 @@
 		841EEF6B1E77015600DBF840 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8443C60A1E771B2E0093B0AF /* List.plist */,
 				841EEF6C1E77015600DBF840 /* Info.plist */,
 				841EEF6D1E77015600DBF840 /* main.m */,
 			);

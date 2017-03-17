@@ -11,18 +11,15 @@
 @implementation TableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
-        // Initialization code
+    
+        self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier];
         self.name = [[UILabel alloc]init];
         self.name.textAlignment = UITextAlignmentLeft;
         self.name.font = [UIFont systemFontOfSize:20];
@@ -33,18 +30,20 @@
         [self.contentView addSubview:self.name];
         [self.contentView addSubview:self.subName];
         [self.contentView addSubview:self.image];
-        
-    }
+    
     return self;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
+    
+    
     CGRect contentRect = self.contentView.bounds;
     CGFloat boundsX = contentRect.origin.x;
     CGRect frame;
     
-    frame= CGRectMake(boundsX+20 ,0, 40, 40);
+    frame= CGRectMake(boundsX+15 ,0, 44, 44);
     self.image.frame = frame;
     
     frame= CGRectMake(boundsX+70 ,5, 200, 25);

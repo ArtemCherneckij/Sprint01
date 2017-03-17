@@ -27,9 +27,7 @@
 
 -(NSArray *)people
 {
-    if (!_people) {
-        _people = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"List" ofType:@"plist"]];
-    }
+    _people = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"List" ofType:@"plist"]];
     return _people;
 }
 
@@ -54,13 +52,10 @@
         cell = [[[TableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    //cell.name.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"Name"];
-    //cell.subName.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"SubName"];
-    
-    
     cell.name.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"Name"];
     cell.subName.text = [[self.people objectAtIndex:indexPath.row] valueForKey:@"SubName"];
-    cell.image.image = [UIImage imageNamed:@"1.png"];
+    NSString *path =[[self.people objectAtIndex:indexPath.row] valueForKey:@"Image"];
+    cell.image.image = [UIImage imageNamed:path];
     
     return cell;
 }

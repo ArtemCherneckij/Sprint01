@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>Image</key>
-		<string>2.png</string>
+		<string>1.jpg</string>
 		<key>Name</key>
 		<string>Dmitrij</string>
 		<key>SubName</key>
@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>Image</key>
-		<string>1.png</string>
+		<string>2.jpg</string>
 		<key>Name</key>
 		<string>Artem</string>
 		<key>SubName</key>
